@@ -18,7 +18,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
+   <style>
     /* =========================
        General Styles
     ========================= */
@@ -581,33 +581,52 @@
       display: none;
     }
 
-    .timeline-item h5 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      color: #2c3e50;
+    /* Hero Section Mobile Fix */
+    @media (max-width: 991px) {
+      #hero {
+        flex-direction: column !important;
+        padding: 4rem 2rem;
+        min-height: auto;
+      }
+
+      #hero .hero-content {
+        margin-bottom: 2rem;
+      }
+
+      #animation-surface {
+        width: 100% !important;
+        height: 250px !important;
+        /* mobile-friendly height */
+      }
     }
 
-    .timeline-item p {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 400;
-      color: #34495e;
+    @media (max-width: 575px) {
+      #darkModeToggle {
+        font-size: 1.2rem;
+      }
+
+      .nav-link {
+        font-size: 0.9rem;
+      }
     }
 
-    .timeline-item ul li {
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #555;
+    @media (max-width: 575px) {
+
+      .skill-card,
+      .project-card {
+        font-size: 0.9rem;
+        padding: 1rem;
+      }
     }
 
-    .timeline-item a {
-      font-weight: 600;
-      color: #0d6efd;
-      text-decoration: none;
-    }
+    @media (max-width: 575px) {
+      .timeline {
+        gap: 1.5rem;
+      }
 
-    .timeline-item a:hover {
-      text-decoration: underline;
+      .timeline-item {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -1317,26 +1336,18 @@
 
     }
 
-
     //resizes the canvas to match the browser window
-
     function resize() {
       if (canvas) {
-
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
+        canvas.height = window.innerHeight * 0.4; // mobile-friendly height
         gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-        gradient.addColorStop(0, 'rgb(0, 144, 142)');
-        gradient.addColorStop(1, 'rgb(162, 0, 141)');
+        gradient.addColorStop(0, 'rgb(0,144,255)');
+        gradient.addColorStop(1, 'rgb(255,0,144)');
       }
-
     }
-
   </script>
-
 </body>
-
-
 </html>
+
 
